@@ -13,10 +13,6 @@ editor_options:
   chunk_output_type: inline
 ---
 
-```{r setup, include=FALSE}
-library(knitr)
-```
-
 # Introduction
 
 The goal of this document is to:
@@ -89,6 +85,7 @@ When Prompted, click `Sign in to the Console`. Follow the prompts to enter your 
 On the AWS home screen, click on your username at the top right-hand side of the screen to display a drop-down menu. Click on `My Security Credentials` from this menu.
 
 ![My Security Credentials](images/setup/MySecurityCredentials.png)
+
 
 A warning screen will pop-up reminding you that these security credentials should be used with care! Read and understand this warning. Then, click on `Continue with Security Credentials`.
 
