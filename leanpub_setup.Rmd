@@ -61,7 +61,7 @@ Note on \$\$: **AWS will charge whichever account you link to your account.**
 
 ### Step 1: Get Account
 
-Get an account at [aws.amazon.com](https://aws.amazon.com/) Click on `Sign In to the Console`.
+To get an account, go to [aws.amazon.com](https://aws.amazon.com/) and click on `Sign In to the Console`.
 
 ![Sign in to Console](images/setup/aws_signin.png)
 Fill in information to Create an AWS account.
@@ -126,7 +126,7 @@ You're all ready to start using Polly via AWS in R!
 
 ### A final note on AWS Access Key Security
 
-You have to make sure amazon web services (AWS) is set up before proceding. To do this, you'll need your AWS keys. Another **warning**: <span style="color:red"> Don't put your credentials in a place where anyone else can find them, especially online. Hackers will [steal them](http://readwrite.com/2014/04/15/amazon-web-services-hack-bitcoin-miners-github/) and, for example, mine cryptocurrency on your dollar. If you accidentally put your credentials in a GitHub repo, [scrub it](https://help.github.com/articles/removing-sensitive-data-from-a-repository/) and [get new AWS keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) immediately!</span>
+One more **warning**: <span style="color:red"> Don't put your credentials in a place where anyone else can find them, especially online. Hackers will [steal them](http://readwrite.com/2014/04/15/amazon-web-services-hack-bitcoin-miners-github/) and, for example, mine cryptocurrency on your dollar. If you accidentally put your credentials in a GitHub repo, [scrub it](https://help.github.com/articles/removing-sensitive-data-from-a-repository/) and [get new AWS keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) immediately!</span>
 
 ## Google : YouTube API
 
@@ -206,10 +206,10 @@ Specify the course inputs to be used in course checking and generation:
 
 ```{r didactr-setup, eval=FALSE}
 ## Specify the course directory
-course_dir = "/Users/shannonellis/Desktop/jhudsl_CDS/cds_githubbasics"
+course_dir = "/Users/shannonellis/Desktop/jhudsl_CDS/cds_R"
 ## The name of your Course 
 ## This will be used in YouTube Video Creation
-Course = "Version Control"
+Course = "Introduction to R"
 ## Point to where your YouTube API JSON file is saved
 json_file = "/Users/shannonellis/Desktop/jhudsl_CDS/yt_Ellis.json"
 ```
