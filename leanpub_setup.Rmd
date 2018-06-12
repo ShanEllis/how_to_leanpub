@@ -7,6 +7,7 @@ author:
 output:
   BiocStyle::html_document:
   code_folding: show
+  toc_depth: 3
 abstract: | 
   This document walks you through the necessary steps to get you to the point that you can check and update Leanpub course contents.
 editor_options: 
@@ -25,7 +26,7 @@ Once you have the necessary accounts set up and have gained access to the approp
 
 1. Generate data frame with information about course status (`check_course()`)
 2. Get PDF and PNGs from Google Slides (`create_images()`)
-3. Generate videos locally from Slides and scripts (`create_videos`)
+3. Generate videos locally from Slides and scripts (`create_videos()`)
 4. Upload videos to YouTube (`vids_to_youtube()`)
 5. Update YouTube link in lesson (`update_youtube_link()`)
 
@@ -46,9 +47,11 @@ Throughout this process, you'll get the following technologies up and running to
 
 ## Install ffmpeg
 
-While not the best long-term solution, `ffmpeg` has to be installed for use with `ari` later. Unfortunately, the autoencoder we'll need is not included with the default download. So, you'll have to install ffmpeg as below.
+While not the best long-term solution, `ffmpeg` has to be installed for use with `ari` later. Unfortunately, the autoencoder we'll need is not included with the default download. So, for macOS, you'll have to install ffmpeg as below. (For Windows installation, you'll want to follow instructions to download [here](https://www.ffmpeg.org/download.html).)
 
 ```{bash, eval=FALSE}
+## Note: this does NOT have to be done from a
+## particular directory to install correctly
 brew install ffmpeg --with-fdk-aac
 ```
 
@@ -58,13 +61,16 @@ In order to generate videos using `ari`, you'll need an Amazon Web Services (AWS
 
 Note on \$\$: **AWS will charge whichever account you link to your account.**
 
+**If you already have an AWS account, you'll likely want to start at "Step 3: Give Polly Permissions" below!* {-}**
 
 ### Step 1: Get Account
 
-To get an account, go to [aws.amazon.com](https://aws.amazon.com/) and click on `Sign In to the Console`.
+To get an account, go to [aws.amazon.com](https://aws.amazon.com/) and click on `Sign In to the Console`. (You *may* see a different button at the top-right that says, `Get AWS account` or something along those lines. That is the button you want! Click on that.)
 
 ![Sign in to Console](images/setup/aws_signin.png)
-Fill in information to Create an AWS account.
+Fill in information to Create an AWS account. 
+
+**Note**: if you're asked for an email address, be sure to enter an email address and not your account name.
 
 ![Create Acount](images/setup/CreateAWSAccount.png)
 
@@ -96,7 +102,9 @@ From the menu that is now available, click on "Access Keys" to expand that menu 
 
 ![Access Keys](images/setup/AccessKeys.png)
 
-Click on `Create New Access Key`. A window will pop up letting you know that a new key has been created. You can `Download Key File` now. Yet another reminder to keep it in a safe place and never share it on the Internet.
+Click on `Create New Access Key`. A window will pop up letting you know that a new key has been created. You can `Download Key File` now. Yet another reminder to **keep it in a safe place and never share it on the Internet**. (If you don't see exactly this window, the option to Download the Key File should be on the screen. You'll want to download the key now. You will not have hte option to do so later. However, you can always create a new key later.)
+
+![Download CSV](images/setup/DownloadKey.png)
 
 ### Step 3: Give Polly Permissions
 
@@ -126,11 +134,13 @@ You're all ready to start using Polly via AWS in R!
 
 ### A final note on AWS Access Key Security
 
-One more **warning**: <span style="color:red"> Don't put your credentials in a place where anyone else can find them, especially online. Hackers will [steal them](http://readwrite.com/2014/04/15/amazon-web-services-hack-bitcoin-miners-github/) and, for example, mine cryptocurrency on your dollar. If you accidentally put your credentials in a GitHub repo, [scrub it](https://help.github.com/articles/removing-sensitive-data-from-a-repository/) and [get new AWS keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) immediately!</span>
+#### One more warning: **Don't put your credentials in a place where anyone else can find them, especially online. Hackers will [steal them](http://readwrite.com/2014/04/15/amazon-web-services-hack-bitcoin-miners-github/) and, for example, mine cryptocurrency on your dollar.** If you accidentally put your credentials in a GitHub repo, [scrub it](https://help.github.com/articles/removing-sensitive-data-from-a-repository/) and [get new AWS keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) immediately! {-}
 
 ## Google : YouTube API
 
 In order to automatically upload videos to YouTube, you'll need to gain access to the YouTube API:
+
+##### If you already have a Google Cloud account, start at to Step 3 "Step 3: Search APIs" below. {-}
 
 ### Step 1: Google Cloud APIs
 
