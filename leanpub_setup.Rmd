@@ -35,6 +35,7 @@ Once you have the necessary accounts set up and have gained access to the approp
 Throughout this process, you'll get the following technologies up and running to allow you to eventually compile your Leanpub course:
 
 * `ffmpeg` - dependency of `ari`
+* `ImageMagick`
 * Amazon Web Services (AWS) - to allow access to Polly for text-to-speech
 * YouTube API - provide access to Youtube API via `tuber`
 * R packages:
@@ -45,7 +46,7 @@ Throughout this process, you'll get the following technologies up and running to
 
 # Setup
 
-## Install ffmpeg
+## Install ffmpeg and ImageMagick
 
 While not the best long-term solution, `ffmpeg` has to be installed for use with `ari` later. Unfortunately, the autoencoder we'll need is not included with the default download. So, for macOS, you'll have to install ffmpeg as below. (For Windows installation, you'll want to follow instructions to download [here](https://www.ffmpeg.org/download.html).)
 
@@ -53,6 +54,12 @@ While not the best long-term solution, `ffmpeg` has to be installed for use with
 ## Note: this does NOT have to be done from a
 ## particular directory to install correctly
 brew install ffmpeg --with-fdk-aac
+```
+
+For macOS, you can install ImageMagick as below. For Windows, you can follow the instructions [here](https://legacy.imagemagick.org/script/download.php).
+
+```{bash, eval = FALSE}
+brew install ImageMagick
 ```
 
 ## Amazon Web Services (AWS) :  Polly Permissions
