@@ -321,7 +321,7 @@ To upload the videos to YouTube, you will have to specify where your YouTube API
 * the `ari` video locally was created more recently than the last youtube_upload for that lesson
 
 ```{r vids_to_youtube, eval=FALSE}
-out <- vids_to_youtube(out, Course=Course, json = json_file)
+out <- vids_to_youtube(out, course_title = Course, json = json_file)
 ```
 
 Note: if you're getting an upload error, you may have to run: `file.remove('.httr-oauth')` to remove stale authentication. You will then have to re-authenticate your YouTube account.
